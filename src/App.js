@@ -17,25 +17,28 @@ function App(){
 
     // playClick()함수
     const playClick = ()=>{
+        // error or fix here
         // console.log(1)
-        if(count <= 4){
+        if(count < 6){
             // console.log(1)
             let aaa = randomDate(9);
             let bbb = randomDate(9);
             count++;
             setAhistory([...ahistory,aaa]);
             setBhistory([...bhistory,bbb]);
-        } else if(count === 5){
-            // console.log(1)
-            count=0;
-            setAhistory([])
-            setBhistory([])
+        } 
+        else if(count === 5){
+            console.log(1)
+            // setAhistory([])
+            // setBhistory([])
         }
     }
+
     
     // resetClick()함수
     const resetClick = ()=>{
         // console.log(1)
+        count = 0;
         setAhistory([]);
         setBhistory([]);
     }
@@ -44,15 +47,15 @@ function App(){
         <div id='Wrap'>
             <div>
                 <div className='practice'>
-                <Proplay/>
+                <Proplay count={count} aTeam={ahistory} bTeam={bhistory}/>
                 </div>
                 <div className='btn'>
                 <Button onClick={playClick}>start</Button>
                 <Button onClick={resetClick}>reset</Button>
                 </div>
                 <div className='contain'>
-                <Border name='A' myteam={ahistory}></Border>
-                <Border name='B' myteam={bhistory}></Border>
+                <Border name='A' team='a' myteam={ahistory}></Border>
+                <Border name='B' team='b' myteam={bhistory}></Border>
                 </div>    
             </div>
         </div>

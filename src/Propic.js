@@ -26,8 +26,14 @@ const proNum = {
     b:[B00,B01,B02,B03,B04,B05,B06,B07,B08,B09]
 }
 
-export default function Propic(){
+export default function Propic({team,num=0}){
+    // I can not understand it
+    // console.log(team)
+    const src = proNum[team][num];
+    // console.log(src)
+    // console.log(num)
+    const alt = 'zero'
     return(
-        <img src='' alt=''/>
+        <img src={src} alt={alt}/>
     )
 }
